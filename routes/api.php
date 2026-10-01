@@ -6,7 +6,9 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\MasterDataController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BasecampController;
+use App\Http\Controllers\TechnicianController;
 
+Route::apiResource('technicians', TechnicianController::class);
 // 1. Public Route (Bisa diakses tanpa login)
 Route::post('/login', [AuthController::class, 'login']);
 

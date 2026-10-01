@@ -10,8 +10,12 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
-
+  use HasApiTokens, HasFactory, Notifiable, HasRoles;
+  
+public function technician()
+{
+    return $this->hasOne(Technician::class);
+}
     /**
      * The attributes that are mass assignable.
      *
